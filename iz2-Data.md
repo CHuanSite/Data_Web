@@ -4,6 +4,8 @@ title: Data
 permalink: /Data/
 ---
 
+[Data Download](https://drive.google.com/file/d/1VFPj8lBLZMcr0j5nFJgRhyNz-07vy7mt/view?usp=sharing)
+
 # Important Note
 
 We have now updated the data to work with the new forward-looking problem formulation. Note that in this competition you will be predicting the target for ALL users in the posted test set: test_v2.csv, for their transactions in the future time period of December 1st 2018 through January 31st 2019.
