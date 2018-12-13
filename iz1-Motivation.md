@@ -5,8 +5,8 @@ permalink: /Motivation/
 ---
 
 <p align="center">
-  <img src="./assets/Google.jpg" width="300" />
-  <img src="./assets/RStudio.png" width="300" /> 
+  <img src="/assets/Google.jpg" width="300" />
+  <img src="/assets/RStudio.png" width="300" /> 
 </p>
 
 
@@ -14,6 +14,7 @@ permalink: /Motivation/
 
 
 The 80/20 rule has proven true for many businesses–only a small percentage of customers produce most of the revenue. As such, marketing teams are challenged to make appropriate investments in promotional strategies.
+
 
 RStudio, the developer of free and open tools for R and enterprise-ready products for teams to scale and share work, has partnered with Google Cloud and Kaggle to demonstrate the business impact that thorough data analysis can have.
 
