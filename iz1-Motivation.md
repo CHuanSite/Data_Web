@@ -5,8 +5,8 @@ permalink: /Motivation/
 ---
 
 <p align="center">
-  <img src="/assets/Google.jpg" width="300" />
-  <img src="/assets/RStudio.png" width="300" /> 
+  <img src="{{site.baseurl}}/assets/Google.jpg" width="300" />
+  <img src="{{site.baseurl}}/assets/RStudio.png" width="300" /> 
 </p>
 
 
