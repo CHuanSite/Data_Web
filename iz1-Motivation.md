@@ -5,10 +5,9 @@ permalink: /Motivation/
 ---
 
 <p align="center">
-  <img src="/chuansite.github.io/Data_Web/assets/Google.jpg" width="300" />
-  <img src="/chuansite.github.io/Data_Web/assets/RStudio.png" width="300" /> 
+  <img src="/assets/Google.jpg" width="300" alt=""/>
+  <img src="/assets/RStudio.png" width="300" alt="" /> 
 </p>
-
 
 [Kaggle Competition](https://www.kaggle.com/c/ga-customer-revenue-prediction)
 
