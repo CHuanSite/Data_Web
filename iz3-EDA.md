@@ -3,7 +3,9 @@ layout: page
 title: EDA
 permalink: /EDA/
 ---
+There are in fact two different types of data: **Raw Data** and **Summary Data**. To do EDA on the data, we do seperately on the **Raw Data** and **Summary Data**
 
+#  Raw Data
 Here we explore the browser distribution. 
 Most of the visitors used chrome browser. The most used browsers are chrome, safari, firefox. 
 
@@ -56,8 +58,13 @@ Revenue is higher in weekdays than weekends.
   <img src="{{site.url}}{{site.baseurl}}/assets/6-2.png" width="600" />
 </p>
 
+#  Summary Data
 
+Based on [Random Forest](https://en.wikipedia.org/wiki/Random_forest), we obtain the feature importance of the data
 
+<p align="center">
+<img src="{{site.url}}{{site.baseurl}}/assets/feature_importance.png" width="1000" />
+</p>
 
 
 

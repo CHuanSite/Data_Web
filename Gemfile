@@ -18,6 +18,11 @@ gem "jekyll-theme-basically-basic"
 gem "agency-jekyll-theme"
 gem "jekyll-bulma-theme"
 gem "jekyll-theme-foundation"
+gem "jekyll-theme-primer"
+gem "minimal-mistakes-jekyll"
+gem "jekyll-theme-terminal"
+gem "jekyll-theme-basically-basic"
+gem "jekyll-theme-monospace"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.

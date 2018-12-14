@@ -1,6 +1,11 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (5.2.2)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     agency-jekyll-theme (1.0.0)
@@ -17,10 +22,16 @@ GEM
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
     execjs (2.7.0)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
     forwardable-extended (2.6.0)
+    gemoji (3.0.0)
     hash-joiner (0.0.7)
       safe_yaml
+    html-pipeline (2.9.1)
+      activesupport (>= 2)
+      nokogiri (>= 1.4)
     htmlbeautifier (1.3.1)
     htmlcompressor (0.4.0)
     http_parser.rb (0.6.0)
@@ -45,6 +56,11 @@ GEM
       jekyll (~> 3.3)
     jekyll-feed (0.11.0)
       jekyll (~> 3.3)
+    jekyll-gist (1.5.0)
+      octokit (~> 4.2)
+    jekyll-github-metadata (2.9.4)
+      jekyll (~> 3.1)
+      octokit (~> 4.0, != 4.4.0)
     jekyll-include-cache (0.1.0)
       jekyll (~> 3.3)
     jekyll-paginate (1.1.0)
@@ -72,12 +88,24 @@ GEM
     jekyll-theme-foundation (0.3.6)
       jekyll (~> 3.4)
       jekyll-seo-tag (~> 2.1)
+    jekyll-theme-monospace (0.1.16)
+      jekyll (~> 3.5)
+    jekyll-theme-primer (0.5.3)
+      jekyll (~> 3.5)
+      jekyll-github-metadata (~> 2.9)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-theme-terminal (0.7.1)
+      jekyll (~> 3.6)
     jekyll-tidy (0.2.2)
       htmlbeautifier
       htmlcompressor
       jekyll
     jekyll-watch (2.1.2)
       listen (~> 3.0)
+    jemoji (0.10.1)
+      gemoji (~> 3.0)
+      html-pipeline (~> 2.2)
+      jekyll (~> 3.0)
     json (2.1.0)
     jumbo-jekyll-theme (2.3.6)
       autoprefixer-rails (~> 5.2.1)
@@ -103,11 +131,25 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
     mercenary (0.3.6)
+    mini_portile2 (2.3.0)
     minima (2.5.0)
       jekyll (~> 3.5)
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
+    minimal-mistakes-jekyll (4.2.1)
+      jekyll (~> 3.3)
+      jekyll-feed (~> 0.8)
+      jekyll-gist (~> 1.4)
+      jekyll-paginate (~> 1.1)
+      jekyll-sitemap (~> 1.0)
+      jemoji (~> 0.7)
+    minitest (5.11.3)
     multi_json (1.13.1)
+    multipart-post (2.0.0)
+    nokogiri (1.8.5)
+      mini_portile2 (~> 2.3.0)
+    octokit (4.13.0)
+      sawyer (~> 0.8.0, >= 0.5.3)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (3.0.3)
@@ -123,9 +165,15 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    sawyer (0.8.1)
+      addressable (>= 2.3.5, < 2.6)
+      faraday (~> 0.8, < 1.0)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
+    thread_safe (0.3.6)
+    tzinfo (1.2.5)
+      thread_safe (~> 0.1)
     uglifier (0.5.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
@@ -141,8 +189,12 @@ DEPENDENCIES
   jekyll-theme-basically-basic
   jekyll-theme-cayman
   jekyll-theme-foundation
+  jekyll-theme-monospace
+  jekyll-theme-primer
+  jekyll-theme-terminal
   jumbo-jekyll-theme
   minima (~> 2.0)
+  minimal-mistakes-jekyll
   tzinfo-data
 
 BUNDLED WITH

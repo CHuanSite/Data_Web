@@ -3,8 +3,15 @@ layout: page
 title: Prediction
 permalink: /Prediction/
 ---
+# Dealing with Missing Data
+By the EDA, we find that there are a large porpotion amoung of missing data, so the method we use is that if there exists a missing data, we set that data to be zero, and then, for the data of character form, we transform it into factor, and for the factor data, we just flatten it into several 0 and 1 columns. 
+<p align="center">
+  <img src="{{site.url}}{{site.baseurl}}/assets/Missing.png" width="600" />
+</p>
+
+
 # Feature Correlation Exploration
-For the prediction task, we first study the correlation between different variables. Here, by the EDA, we find that there are a large porpotion amoung of missing data, so the method we use is that if there exists a missing data, we set that data to be zero, and then, for the data of character form, we transform it into factor, and for the factor data, we just flatten it into several 0 and 1 columns. Then, the correlation between the variable **transactionRevunue** and other explanatory variables are shown. We display the top 10 variables which have the highest correlation and the top 10 variables which have the lowest correlation.
+For the prediction task, we first study the correlation between different variables. Then, the correlation between the variable **transactionRevunue** and other explanatory variables are shown. We display the top 10 variables which have the highest positive correlation and the top 10 variables which have the highest negative correlation.
 
 <p align="center">
   <img src="{{site.url}}{{site.baseurl}}/assets/Pos_Cor.png" width="600" />
