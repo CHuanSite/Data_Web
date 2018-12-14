@@ -63,7 +63,7 @@ Revenue is higher in weekdays than weekends.
 Based on [Random Forest](https://en.wikipedia.org/wiki/Random_forest), we obtain the feature importance of the data
 
 <p align="center">
-<img src="{{site.url}}{{site.baseurl}}/assets/feature_importance.png" width="1000" />
+<img src="{{site.url}}{{site.baseurl}}/assets/Feature_Importance.png" width="1000" />
 </p>
 
 
