@@ -5,8 +5,8 @@ permalink: /Motivation/
 ---
 
 <p align="center">
-  <img src="{{site.url}}{{site.baseurl}}/assets/Google.jpg" width="300" />
-  <img src="{{site.url}}{{site.baseurl}}/assets/RStudio.png" width="300" />
+  <img src="{{site.url}}{{site.baseurl}}/assets/Google.jpg" width="250" />
+  <img src="{{site.url}}{{site.baseurl}}/assets/RStudio.png" width="250" />
 </p>
 
 [Kaggle Competition](https://www.kaggle.com/c/ga-customer-revenue-prediction)
