@@ -6,62 +6,68 @@ permalink: /Data/
 
 [Data Download](https://drive.google.com/file/d/1VFPj8lBLZMcr0j5nFJgRhyNz-07vy7mt/view?usp=sharing)
 
-# Important Note
+The original data is from Kaggle contest "Google Analytics Customer Revenue Prediction". And also hits part from google analytics API (which is also included in Kaggel version 2 data).
 
-We have now updated the data to work with the new forward-looking problem formulation. Note that in this competition you will be predicting the target for ALL users in the posted test set: test_v2.csv, for their transactions in the future time period of December 1st 2018 through January 31st 2019.
+# Raw Data
+A brief description of the original data can be found from Kaggle
 
-# What files do I need?
+1. fullVisitorId- A unique identifier for each user of the Google Merchandise Store.
 
-You will need to download **train_v2.csv** and **test_v2.csv**. These contain the data necessary to make predictions for each fullVisitorId listed in **sample_submission_v2.csv.**
+2. channelGrouping - The channel via which the user came to the Store.
 
-Unfortunately, due to time constraints, the BigQuery version of this data will not be made available immediately.
+3. date - The date on which the user visited the Store.
 
-# What should I expect the data format to be?
+4. device - The specifications for the device used to access the Store.
 
-Both **train_v2.csv** and **test_v2.csv** contain the columns listed under Data Fields. Each row in the dataset is one visit to the store. Because we are predicting the log of the total revenue per user, be aware that not all rows in **test_v2.csv** will correspond to a row in the submission, but all unique fullVisitorIds will correspond to a row in the submission.
+5. geoNetwork - This section contains information about the geography of the user.
 
-**IMPORTANT**: Due to the formatting of fullVisitorId you must load the Id's as strings in order for all Id's to be properly unique!
-There are multiple columns which contain JSON blobs of varying depth. In one of those JSON columns, totals, the sub-column transactionRevenue contains the revenue information we are trying to predict. This sub-column exists only for the training data.
+6. socialEngagementType - Engagement type, either "Socially Engaged" or "Not Socially Engaged".
 
-# What am I predicting?
+7. totals - This section contains aggregate values across the session.
 
-We are predicting the **natural log** of the sum of all transactions **per user**. Once the data is updated, as noted above, this will be for **all users in test_v2.csv for December 1st, 2018 to January 31st, 2019**. For every user in the test set, the target is:
+8. trafficSource - This section contains information about the Traffic Source from which the session originated.
 
-**Note**: that the dataset does NOT contain data for December 1st 2018 to January 31st 2019. You must identify the unique fullVisitorIds in the provided test_v2.csv and make predictions for them for those unseen months.
+9. visitId - An identifier for this session. This is part of the value usually stored as the _utmb cookie. This is only unique to the user. For a completely unique ID, you should use a combination of fullVisitorId and visitId.
 
-# How are the Public & Private Leaderboards calculated?
+10. visitNumber - The session number for this user. If this is the first session, then this is set to 1.
 
-sample_submission_v2.csv is composed of all fullVisitorIds for the 5/1/18 to 10/15/18 time period. The public leaderboard submission for this file is based on a separate timeframe than the private leaderboard.
+11. visitStartTime - The timestamp (expressed as POSIX time).
 
-The Public LB is being calculated for those visitors during the same timeframe of 5/1/18 to 10/15/18. This is all publicly-available for the target prediction, but intended to provide some means of signal for those who wish to use it in that way. The Private LB is being calculated on the future-looking timeframe of 12/1/18 to 1/31/19 - for those same set of users.
+12.hits - This row and nested fields are populated for any and all types of hits. Provides a record of all page visits.
 
-Therefore, your submission that is intended for the public LB timeframe will be different from the private LB timeframe, which will be rescored/recalculated on the future timeframe.
+13. customDimensions - This section contains any user-level or session-level custom dimensions that are set for a session. This is a repeated field and has an entry for each dimension that is set.
 
-Knowing this, competitors should be making explicit final submission selections for those submissions which represent what they expect those future-looking predictions to be. These final submission selections for which this competition permits 2, per the rules, can be made under "My Submissions" by the final submission deadline.
+14.totals - This set of columns mostly includes high-level aggregate data.
 
-# File Descriptions
+Where the totals and hits are all json object, and we expand it. Totals contain high-level aggregated data, like revenue is in the totals. 
 
-- ***train_v2.csv*** - the updated training set - contains user transactions from August 1st 2016 to April 30th 2018.
-- ***test_v2.csv*** - the updated test set - contains user transactions from May 1st 2018 to October 15th 2018.
-- ***sample_submission_v2.csv*** - a updated sample submission file in the correct format. Contains all fullVisitorIds in test_v2.csv. Your submission's PredictedLogRevenue column should make forward-looking predictions for each of these fullVisitorIds for the timeframe of December 1st 2018 to January 31st 2019. Review "What am I predicting?" above for details.
+Hits is the detailed web action the visitor have. It will record every website visited and action the visitor done. Therefore the transaction columns are in the hits, which means if you use hits to predict the revenue then you can atucally fully recover those digits. Therefore we remove all columns related directly to transaction. 
 
-# Data Fields
+There are still lots of other features remian in hits.
 
-- ***fullVisitorId*** - A unique identifier for each user of the Google Merchandise Store.
-- ***channelGrouping*** - The channel via which the user came to the Store.
-- ***date*** - The date on which the user visited the Store.
-- ***device*** - The specifications for the device used to access the Store.
-- ***geoNetwork*** - This section contains information about the geography of the user.
-- ***socialEngagementType*** - Engagement type, either "Socially Engaged" or "Not Socially Engaged".
-- ***totals*** - This section contains aggregate values across the session.
-- ***trafficSource*** - This section contains information about the Traffic Source from which the session originated.
-- ***visitId*** - An identifier for this session. This is part of the value usually stored as the _utmb cookie. This is only unique to the user. For a completely unique ID, you should use a combination of fullVisitorId and visitId.
-- ***visitNumber*** - The session number for this user. If this is the first session, then this is set to 1.
-- ***visitStartTime*** - The timestamp (expressed as POSIX time).
-- ***hits*** - This row and nested fields are populated for any and all types of hits. Provides a record of all page visits.
-- ***customDimensions*** - This section contains any user-level or session-level custom dimensions that are set for a session. This is a repeated field and has an entry for each dimension that is set.
-- ***totals*** - This set of columns mostly includes high-level aggregate data.
+time -- millisecond of visiting time for each pages
 
-# External Data
+Product - told you which good are visitor currently viewing, also contain their price and name
 
-External data is permitted for this competition, per this forum post. This includes the Google Merchandise Store Demo Account. Although the Demo Account contains the predicted variable, final standings will not benefit from access to this external data, because it requires future-looking predictions.
+page.* - told you the exact web path along the visitor's visiting.
+
+social.* - told you if the visitor have a social network referral and where the referral from.
+
+content* - told you what class of content are visitor viewing
+
+eventInfo* - told you the action visitor took during the whole visiting
+
+And other technical columns not easy to understand. In this version of hits data, it contain multiple rows for one visitor, therefore we need to get some features and summarise it. We do this through a detailed EDA of the hits data only and find some patterns for buyers. Therefore we reduce our hits data according to these patterns. And only use the reduced features and no original data, doing a randomforest already improve result to some extent.
+
+# Summary Data:
+
+time_* - told you some quantiles of page visiting duration
+
+*_count - told you the count of certain action or state the visitor have during whole visiting. Say social_count is for the referral he had. Bags_count is the count of pages related to Bags, and Click_count the count for number of clicking on good pictures the visitor had.
+
+price_* - told you some quantile of good prices the visitor took action on
+
+just.view - a summary statistics telling you if the visitor is just viewing and have no actions.
+
+
+
