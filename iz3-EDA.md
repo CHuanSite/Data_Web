@@ -3,6 +3,9 @@ layout: page
 title: EDA
 permalink: /EDA/
 ---
+
+More EDA can be found on [shiny](https://luqingan.shinyapps.io/google_revenue/) application
+
 There are in fact two different types of data: **Raw Data** and **Summary Data**. To do EDA on the data, we do seperately on the **Raw Data** and **Summary Data**
 
 #  Raw Data
