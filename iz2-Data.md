@@ -4,7 +4,7 @@ title: Data
 permalink: /Data/
 ---
 
-[Data Download](https://drive.google.com/file/d/1VFPj8lBLZMcr0j5nFJgRhyNz-07vy7mt/view?usp=sharing)
+[Data Download](https://github.com/CHuanSite/Google-Revenue/tree/master/dataset)
 
 The original data is from Kaggle contest "Google Analytics Customer Revenue Prediction". And also hits part from google analytics API (which is also included in Kaggel version 2 data).
 
