@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Google Analytics Customer Revenue Prediction
-email: hchen130@jhu.edu
+#email: hchen130@jhu.edu
 description: >- # this means to ignore newlines until "baseurl:"
   This website summarizes the project done by Huan Chen, Bohao Tang, Luqin Gan for the 
   course 140.712 Advanced Data Science II.

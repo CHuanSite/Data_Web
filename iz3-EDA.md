@@ -60,11 +60,49 @@ Revenue is higher in weekdays than weekends.
 
 #  Summary Data
 
-Based on [Random Forest](https://en.wikipedia.org/wiki/Random_forest), we obtain the feature importance of the data
 
+Let's wait and have a sight of what good are people buying
 <p align="center">
-<img src="{{site.url}}{{site.baseurl}}/assets/Feature_Importance.png" width="1000" />
+    <img src="{{site.url}}{{site.baseurl}}/assets/summary-1.png" width="400" />
 </p>
+
+ Then Let's describe some detail of the transaction behavior. Transaction won't happen when people are viewing the contents
+ <p align="center">
+    <img src="{{site.url}}{{site.baseurl}}/assets/summary-2.png" width="200" />
+ </p>
+
+However, lot's of people do exit at the content page
+<p align="center">
+    <img src="{{site.url}}{{site.baseurl}}/assets/summary-3.png" width="200" />
+</p>
+
+Also there will be no transaction at entrance page
+<p align="center">
+    <img src="{{site.url}}{{site.baseurl}}/assets/summary-4.png" width="200" />
+</p>
+
+Which suggest that people just viewing content after entrance and exit then can not make revenue
+<p align="center">
+    <img src="{{site.url}}{{site.baseurl}}/assets/summary-5.png" width="200" />
+</p>
+
+ Which also suggest there should be some tag that is about transaction. Yes! eventInfo.eventAction is discribing people's action in the website
+ <p align="center">
+    <img src="{{site.url}}{{site.baseurl}}/assets/summary-6.png" width="200" />
+ </p>
+ <p align="center">
+    <img src="{{site.url}}{{site.baseurl}}/assets/summary-7.png" width="200" />
+ </p>
+ <p align="center">
+    <img src="{{site.url}}{{site.baseurl}}/assets/summary-8.png" width="200" />
+ </p>
+ 
+ Is social referal important for transaction? Yes, but referal seems to make people not to buy. But may just beacuse of variance
+ <p align="center">
+    <img src="{{site.url}}{{site.baseurl}}/assets/summary-9.png" width="200" />
+ </p>
+ 
+
 
 
 

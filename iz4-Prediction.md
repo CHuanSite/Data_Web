@@ -52,3 +52,25 @@ Based on the five predicitons, we plot the relationship between MSE and predicti
 </p>
 
 ***Deep Learning*** outperforms all the other methods by a margin. ***Linear Regression***, ***Lasso*** and ***XGBoost*** has similar performance which may be accounted for the reason that the samples size is much larger than the number explanatory variables that variable selection is useless is this problem. ***Logistic + Lienar Regression*** performs worst, which may be for the reason that the logistic regression predicts poorly for whether the customer will buy or not. 
+
+# Combination both Raw and Summary Data
+
+In addition to the prediction above which uses only the raw data, we also use the summary data.
+
+Hits data (delete all columns directly related to transaction record) from the analytic API encodes all detailed web pathes and actions along whole visiting of every visitor, which then will be nested and have multiple rows for every visitor.
+
+To predict for each individual not each web visit (also we don't have visit based revenue data). We need to extract some features for each visitor. We do this from detailed exploring the transaction behavior.
+
+After exploring the behavior, we reduced the nested dataset and extract features which aims to count every meaningful type of web action and also give information to time consumed to a page and price quantiles for goods visitor took action on.
+
+Then as in the html, these part of data is already useful and doing a random forest make the loss be arround 3.5
+
+Then we try to finalize our model, we combine two data by ID and then choose a randomForest because some feature has lots of levels and there are lots of features. And bagging based randomForest is natural to resist overfitting.
+
+We also use the finding that visitor just viewing the content will not make transaction. This will role out about 2/3 of the data (we directly predict them as 0). And they we train the model in remaining data which might assist (but not quite for a tree based model) the power of the training. And the results and the feature importance is as in html
+
+Based on [Random Forest](https://en.wikipedia.org/wiki/Random_forest), we obtain the feature importance of the data
+
+<p align="center">
+    <img src="{{site.url}}{{site.baseurl}}/assets/Feature_Importance.png" width="1000" />
+</p>
